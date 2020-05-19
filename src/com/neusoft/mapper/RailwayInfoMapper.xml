@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neusoft.mapper.RailwayInfoMapper">
+	<insert id="addRailway" parameterType="RailwayInfo">
+
+		INSERT INTO railway(tid ,tname,rid) values(#{tid},#{tname},#{rid})
+
+	</insert>
+	<delete id="dele_Railway" parameterType="int">
+		delete from railway where tid=#{tid}
+	</delete>
+    <select id="get_Count" resultType="int" >
+		select count(*) from railway
+
+	</select>
+	
+
+	<select id="get_select_Railway" resultType="RailwayInfo" parameterType="map">
+		select * from Railway
+	
+		limit #{beginRow},#{pageSize}
+	</select>
+
+
+</mapper>

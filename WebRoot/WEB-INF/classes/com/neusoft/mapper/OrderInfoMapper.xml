@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="com.neusoft.mapper.OrderInfoMapper">  
+<insert id="addOrder" parameterType="orderinfo">
+  <selectKey order="AFTER" keyProperty="oid" resultType="int" >
+     	select last_insert_id()
+     </selectKey>
+     insert into orderinfo (uid,passenger_id,passenger_name,tid,cid,location,start_sid,end_sid,date,create_at,status)
+   values(#{uid},#{passenger_id},#{passenger_name},#{tid},#{cid},#{location},#{start_sid},#{end_sid},#{date},#{create_at},#{status})
+
+</insert>
+ <delete id="del_user"  parameterType="int" > 
+     delete from userInfo where oid=#{oid}
+   </delete>
+  <!--  
+   <update id="updateorderStatus" parameterType="int,String">
+   update  orderinfo set uid=#{uid},passenger_id=#{passenger_id},passenger_name=#{passenger_name},tid=#{tid},cid=#{cid},start_sid=#{start_sid},end_sid=#
+
+{end_sid},date=#{date},create_at=#{create_at},status=#{status} where oid=#{oid}
+   </update> -->
+    <!--  查询用户有哪些订单 -->
+    <select id="getorderByUid" parameterType="int"  resultType="orderinfo" > 
+   	 select * from orderinfo where uid=#{uid}
+   </select>
+</mapper>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.mapper.MessagesInfoMapper">
+   <!--用户添加个人留言 -->
+   <insert id="add_Messages" parameterType="MessagesInfo">
+		insert into MessagesInfo (m_name, m_phone,m_message,m_time)
+		values(#{m_name},#{m_phone},#{m_message},now())
+	</insert>
+   <!-- 分页查询全部留言 -->
+	 <select id="get_select_Messages" resultType="MessagesInfo"
+		parameterType="map">
+		select * from MessagesInfo 
+	</select>
+	<select id="get_Page_station" resultType="MessagesInfo"
+		parameterType="PageInfo">
+		select * from MessagesInfo limit #{beginRow},#{pageSize}
+	</select>
+    <!-- 查询数据条数-->
+	<select id="get_Count" resultType="int" parameterType="map">
+		select count(*) from messagesinfo
+	</select>	
+	
+	<delete id="delete_Messages" parameterType="int">
+		delete from messagesinfo where m_no=#{m_no}
+	</delete>
+	
+	<!-- 关于新闻的 -->
+	
+	<!-- 主键自增 -->
+	 <insert id="add_news" parameterType="NewsInfo" >
+     <selectKey order="AFTER" keyProperty="id" resultType="int" >
+     	select last_insert_id()
+     </selectKey>
+   	insert into userInfo (title,author,release_time,content,content_detail) values (#{title},#{author},now(),#{content},#{content_detail}) 
+   </insert>
+   
+   <!-- 分页查询全部新闻信息 -->
+	 <select id="get_select_news" resultType="NewsInfo"
+		parameterType="map">
+		select * from newsInfo 
+	</select>
+	<select id="get_Page_news" resultType="NewsInfo"
+		parameterType="PageInfo">
+		select * from newsInfo limit #{beginRow},#{pageSize}
+	</select>
+    <!-- 查询新闻数据条数-->
+	<select id="get_news_Count" resultType="int" parameterType="map">
+		select count(*) from newsInfo
+	</select>	
+	
+	<delete id="delete_news" parameterType="int">
+		delete from newsInfo where newsId=#{newsId}
+	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

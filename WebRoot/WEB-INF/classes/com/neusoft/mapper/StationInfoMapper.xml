@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.mapper.StationInfoMapper">
+         <!-- 根据站点名查询 中转信息 去掉重复列 -->
+	<select id="get_station_byname" resultType="StationInfo"><!--  distinct(end_sid)  -->
+		select * from (select railway.tname, stop.* from railway,stop where
+		stop.tid=railway.tid ) as s_name
+		where s_name.tname=#{tname} 
+	</select>
+	     <!-- 分页查询全部 -->
+	 <select id="get_select_station" resultType="StationInfo"
+		parameterType="map">
+		select railway.tname, stop.* from railway,stop
+		<where>
+			<include refid="sql1" />
+			and stop.tid=railway.tid
+		</where>
+
+		limit #{beginRow},#{pageSize}
+	</select>
+		<sql id="sql1">
+		<if test="start_sid!=null and start_sid!='' ">
+			and start_sid like concat("%",#{start_sid},"%")
+		</if>
+		<if test="end_sid!=null and end_sid!='' ">
+			and end_sid like concat("%",#{end_sid},"%")
+		</if>
+     <if test="tname!=null and tname!='' ">
+			and tname like concat("%",#{tname},"%")
+		</if>
+	</sql>
+	
+	
+	
+	 <select id="get_select_allstation" resultType="StationInfo"
+		parameterType="map">
+		select railway.tname, stop.* from railway,stop
+		<where>
+			<include refid="sql1" />
+			and stop.tid=railway.tid
+		</where>
+
+		limit #{beginRow},#{pageSize}
+	</select>
+	<!-- 查询全部数据 -->
+	<select id="getallstation" resultType="StationInfo">
+		select * from stop  
+	</select>
+    <!-- 查询数据条数-->
+	<select id="get_Count" resultType="int" parameterType="map">
+		select count(*) from stop
+		<where>
+			<include refid="sql1" />
+		</where>
+	</select>
+	<select id="get_Page_station" resultType="StationInfo"
+		parameterType="PageInfo">
+		select * from stop limit #{beginRow},#{pageSize}
+	</select>
+	
+	<delete id="delete_station" parameterType="int">
+		delete from stop where sid=#{sid}
+	</delete>
+	
+	<select id="get_station_byId" parameterType="int" resultType="StationInfo">
+
+		select * from stop where sid=#{sid}
+		
+	</select>
+	
+	<update id="update_station" parameterType="StationInfo">
+		update stop set 
+		start_sid=#{start_sid} ,end_sid= #{end_sid} ,
+		arrive_time=#{arrive_time} ,start_time= #{start_time},
+		stop_time=#{stop_time},sticket=#{sticket},pice=#{pice} 
+		where sid=#{sid}
+	</update>
+
+	
+</mapper>

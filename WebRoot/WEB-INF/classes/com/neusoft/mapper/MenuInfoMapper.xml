@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="com.neusoft.mapper.MenuInfoMapper">  
+  <cache />
+  <select id="getMenuList" parameterType="map" resultType="menuinfo">
+	  select * from menuInfo where parentId=#{parentId} and id in (select menuid from roleMenu where roleid=#{roleid} ) 
+  </select>
+ 
+  <select id="getAllMenuList" parameterType="int" resultType="menuinfo">
+  	   select * from menuInfo where parentId=#{parentId}
+  </select>
+ 
+</mapper>

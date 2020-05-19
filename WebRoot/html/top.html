@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="../css/public.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+
+<script type="text/javascript">
+	function tuichu(){
+	   top.location.href ='/SSM/login.jsp';
+		
+	}
+	function jump(){
+	  
+		if (confirm("确定退出本系统吗？")) {
+			tuichu();
+		}
+	}
+</script>
+</head>
+
+<body>
+	<!-- 头部 -->
+	<div class="head" style="height: 100px; ">
+		<div class="headL">
+			<span style=" font-size: 25px;color: white;">欢迎进入高铁订票系统后台</span>
+		</div>
+		<div class="headR">
+			<p class="p1">欢迎，管理员</p>
+			<p class="p2">
+				<a onclick="jump()" name="top" class="resetPWD" target="showFrame" >退出</a>
+			</p>
+		</div>
+
+	</div>
+	
+		</div>
+	</div>
+
+</body>
+</html>

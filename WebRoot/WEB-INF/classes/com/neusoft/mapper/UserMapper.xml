@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.mapper.UserMapper">
+	<insert id="add_user" parameterType="User">
+	
+		<!-- <selectKey order="AFTER" keyProperty="uid" resultType="int">
+			select last_insert_id()
+		</selectKey> -->
+		insert into user (uname, password, idcard, tel, type, email, time)
+		values(#{uname},#{password},#{idcard},#{tel},#{type},#{email},#{time})
+	</insert>
+	
+	
+	<delete id="delUser_Byid" parameterType="String"  >
+	   delete from User where uid=#{uid} in 
+	   
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            +idStr+
+	</foreach>
+	
+	</delete>
+	<sql id="sql2">
+		<if test=" uid!=null and  uid!='' ">
+		
+		  AND  uid in 
+       <foreach collection="branchs" index="index" item="item" open="(" separator="," close=")">  
+         +idStr+
+       </foreach>
+
+		</if>
+
+	</sql>
+	<delete id="del_user" parameterType="int">
+		delete from user where
+		uid = #{uid}
+	</delete>
+	<update id="update_user" parameterType="User">
+		update User set
+		uname=#{uname} , password= #{password} ,
+		idcard=#{idcard} ,
+		tel=#{tel},type=#{type},email=#{email},
+		time=#{time} where
+		uid=#{uid}
+	</update>
+	<select id="get_user_byId" parameterType="int" resultType="User">
+
+		select * from User where uid=#{uid}
+	</select>
+	<select id="get_alluser" resultType="User">
+		select * from User
+	</select>
+
+	<select id="getCount" resultType="int">
+		select count(*) from User
+	</select>
+
+	<select id="get_Count" resultType="int" parameterType="map">
+		select count(*) from User
+		<where>
+			<include refid="sql1" />
+
+		</where>
+	</select>
+	<select id="get_Page_User" resultType="User" parameterType="PageInfo">
+		select * from User limit #{beginRow},#{pageSize}
+	</select>
+	
+
+	<select id="get_select_User" resultType="User" parameterType="map">
+		select * from User
+		<where>
+			<include refid="sql1" />
+		</where>
+		limit #{beginRow},#{pageSize}
+	</select>
+	<sql id="sql1">
+		<if test="uname!=null and uname!='' ">
+			and uname like concat("%",#{uname},"%")
+		</if>
+		
+	</sql>
+
+	<select id="selectList" parameterType="map" resultType="User">
+
+		select * from User WHERE 1=1
+         <where>
+			<include refid="sql1" />
+		</where>
+	<!-- 	'%${value}%'sql注入问题 -->
+	</select>
+</mapper>
