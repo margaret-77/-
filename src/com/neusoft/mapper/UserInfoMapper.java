@@ -1,12 +1,14 @@
 package com.neusoft.mapper;
 
 import java.util.List;
-
 import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
 
 import com.neusoft.beans.UserInfo;
 
 public interface UserInfoMapper {
+	int del_user(int id); 
 	
 	//登陆
 	UserInfo getuser_login(Map<Object,Object> map);
@@ -26,12 +28,13 @@ public interface UserInfoMapper {
 	/*------------------------------------------------------------*/
 	int add_user(UserInfo user);  //这里用void或int均可
 	int upd_user(UserInfo user);  //这里用void或int均可
-	int del_user(int id);  //这里用void或int均可
+	 //这里用void或int均可
 	UserInfo get_login_user(Map<Object,Object> map);  //登录用的resultMap
 	List<UserInfo> getuser_by_ids(List<UserInfo> list);  //根据id查列表
 	List<UserInfo>get_userList(UserInfo user); //多条件查询
 	List<UserInfo> getuser_byname(String userName); //根据name模糊查询
 	
-
+	public int updateInfoUser(Map<Object,Object> map);
+	public int insertUserInfo(@Param("userinfo")UserInfo userinfo);
 	
 }

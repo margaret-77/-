@@ -15,6 +15,8 @@ public interface RailwayInfoMapper {
 	public int get_Count();// 分页
 
 	public List<RailwayInfo> get_select_Railway(Map<Object, Object> map);// 在分页中索引数据
+	
+	public List<RailwayInfo> get_select_allRailway(Map<Object, Object> map);// 在分页中索引数据
 	/*
 	 * public List<RailwayInfo> selectList(Map<Object, Object> map);
 	 */

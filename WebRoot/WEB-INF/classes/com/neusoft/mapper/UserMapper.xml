@@ -89,4 +89,39 @@
 		</where>
 	<!-- 	'%${value}%'sql注入问题 -->
 	</select>
+	
+	<select id="getUser" parameterType="java.lang.String" resultType="User">
+		select * from user where idcard = #{userId}
+	</select>
+	
+	<update id="updateUser" parameterType="java.util.HashMap">
+		update user set passward = #{password} where accountUser = #{userName} and tel = #{phone} and idcard = #{idcard} and passward = #{pass}
+	</update>
+	
+	<select id="queryMoney" parameterType="map" resultType="User">
+   		select * from user where accountUser = #{userName}
+   </select>
+   
+   <update id="addMoney" parameterType="map" >
+   		update user set money = #{money} where accountUser=#{userName}
+   </update>
+   
+   <sql id="insUser">
+   		accountUser,passward,uname,sex,cardtype,idcard,tel,email,type,userinfo_id,money
+   </sql>
+   
+   <insert id="insertUser" parameterType="map">
+   		insert into user (
+   			<include refid="insUser" />
+   		) values (#{user.accountUser},#{user.passward},#{user.uname},#{user.sex},#{user.cardtype},#{user.idcard},#{user.tel},#{user.email},#{user.type},#{user.userinfo_id},#{user.money})
+   		
+   </insert>
+   
+   <select id="queryUser" parameterType="User" resultType="User">
+   		select * from user where accountUser = #{user.accountUser} and idcard = #{user.idcard} and tel = #{user.tel}
+   </select>
+   <select id="queryUserByUserName" parameterType="java.lang.String" resultType="User">
+   		select * from user where accountUser = #{userName}
+   </select>
+	
 </mapper>

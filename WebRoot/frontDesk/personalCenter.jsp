@@ -113,25 +113,27 @@
 				<p>个人中心</p>
 			</div>
 			<ul>
-				<li><a href="SSM/frontDeck/service1.html">个人资料</a></li>
-				<li><a href="frontDeck/service2.html">常用联系人</a></li>
-				<li><a href="frontDeck/service3.html">密码修改</a></li>
-				<li><a href="frontDeck/service4.html">注销账户</a></li>
-				<li><a href="frontDeck/service5.html">通知设置</a></li>
-				
-			</ul>
+		    	<li><a href="frontDesk/service1.jsp">个人资料</a></li>
+				<li><a href="frontDesk/user/linkUser.jsp">常用联系人</a></li>
+				<li><a href="frontDesk/user/updateUser.jsp">密码修改</a></li>
+				<li><a href="queryMoney?username=${user.userName }">我的钱包</a></li>
+				<li><a href="queryOrder?username=${user.userName }">我的订单</a></li>
+				<li><a href="../accountUser_del?id=${user.id}"onclick="return confirm('确定注销吗？') "">注销账户</a></li>
+				<li><a href="frontDesk/service5.jsp">通知设置</a></li>
+				<li><a href="/SSM/login.jsp" onclick="return confirm('确定退出吗？')">退出账号</a></li>
+		    	</ul>
 			<div class="tit-ol">
 				<p>在线购票</p>
 			</div>
 			<ul>
-				<li><a href="online.jsp">立即下单</a></li>
-				<li><a href="problem.html">常见问题</a></li>
+				<li><a href="frontDesk/online.jsp">立即购票</a></li>
+				<li><a href="frontDesk/problem.jsp">常见问题</a></li>
 			</ul>
 			<div class="tit-co">
 				<p>联系我们</p>
 			</div>
 			<ul>
-				<li><a href="contact.jsp">在线留言</a></li>
+				<li><a href="frontDesk/contact.jsp">在线留言</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-9">
@@ -145,7 +147,7 @@
 
 				<div class="banneradd bor" style="height: 633px; width: 911px; ">
 
-					<img src="qt/static/images/banner/TZ.JPG"> <span
+					<img src="<%=path %>/frontDesk/static/images/banner/TZ.JPG"> <span
 						style=" font-size: 24px" value="">${user.userName }</span>
 					上午好！<br>
 					<br>
@@ -168,27 +170,27 @@
 			<footer>
 		<div class="container">
 			<ul class="foot-nav clearfix">
-				<li><a href="index.html">网站首页</a></li>
-				<li><a href="about.html">关于我们</a></li>
-				<li><a href="online.jsp">在线购票</a></li>
-				<li><a href="service.html">个人中心</a></li>
-				<li><a href="news.html">新闻资讯</a></li>
-				<li><a href="contact.jsp">联系我们</a></li>
+				<li><a href="frontDesk/index.jsp">网站首页</a></li>
+				<li><a href="frontDesk/about.jsp">关于我们</a></li>
+				<li><a href="frontDesk/online.jsp">在线购票</a></li>
+				<li><a href="frontDesk/personalCenter.jsp">个人中心</a></li>
+				<li><a href="frontDesk/news.jsp">新闻资讯</a></li>
+				<li><a href="frontDesk/contact.jsp">联系我们</a></li>
 			</ul>
 		</div>
 	</footer>
 	<div class="fl">
 		<ul>
 			<li><a href="tel:15995656015">电话咨询</a></li>
-			<li><a href="index.html">网站首页</a></li>
+			<li><a href="frontDesk/index.jsp">网站首页</a></li>
 			<li><a href="">在线留言</a></li>
 		</ul>
 	</div>
-	<script src="qt/static/js/jquery.min.js" type="text/javascript"
+	<script src="static/js/jquery.min.js" type="text/javascript"
 		charset="utf-8"></script>
-	<script src="qt/static/js/bootstrap.min.js" type="text/javascript"
+	<script src="static/js/bootstrap.min.js" type="text/javascript"
 		charset="utf-8"></script>
-	<script src="qt/static/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/main.js" type="text/javascript" charset="utf-8"></script>
 		</div>
 	</div>
 	

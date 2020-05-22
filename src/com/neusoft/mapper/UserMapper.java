@@ -5,6 +5,8 @@ package com.neusoft.mapper;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.neusoft.beans.User;
 import com.neusoft.utils.PageInfo;
 
@@ -12,7 +14,9 @@ public interface UserMapper {
    public int add_user(User user);
    
 	public int del_user(int uid);
-
+	
+	public int de_User(int userinfo_id);//根据用户名进行注销
+	
 	public int update_user(User user);
 
 	public User get_user_byId(int uid);
@@ -33,6 +37,14 @@ public interface UserMapper {
 
 	public List<User> selectList(Map<Object, Object> map);
 
+	public User getUser(String userId);
 	
+	public int updateUser(Map<Object,Object> map);
+	
+	public User queryMoney(Map<Object,Object> map);
+	public int addMoney(Map<Object,Object> map);
+	public int insertUser(@Param("user") User user);
+	public List<User> queryUser(@Param("user") User user);
+public User queryUserByUserName(String userName);
 
 }

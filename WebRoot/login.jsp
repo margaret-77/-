@@ -11,15 +11,15 @@
 <meta http-equiv="Content-Type" content="text/html" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>登录前台</title>
-<link href="css/css/bootstrap.css" rel="stylesheet">
-<link href="css/css/signin.css" rel="stylesheet">
-<script src="js1/js/ie-emulation-modes-warning.js"></script>
-<link rel="stylesheet" type="text/css" href="css/public.css" />
-<link rel="stylesheet" type="text/css" href="css/page.css" />
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
-<script type="text/javascript" src="js1/form.js"></script>
-<script type="text/javascript" src="js1/jquery.min.js"></script>
-<script type="text/javascript" src="js1/public.js"></script>
+<link href="resource/css/css/bootstrap.css" rel="stylesheet">
+<link href="resource/css/css/signin.css" rel="stylesheet">
+<script src="resource/js1/js/ie-emulation-modes-warning.js"></script>
+<link rel="stylesheet" type="text/css" href="resource/css/public.css" />
+<link rel="stylesheet" type="text/css" href="resource/css/page.css" />
+<link rel="stylesheet" type="text/css" href="resource/css/styles.css" />
+<script type="text/javascript" src="resource/js/form.js"></script>
+<script type="text/javascript" src="resource/js/jquery.min.js"></script>
+<script type="text/javascript" src="resource/js/public.js"></script>
 
 <script type="text/javascript">
 	function refresh() {
@@ -69,8 +69,7 @@
 			
 			<form method="post" action="servlet/AddUserServlet" id="form1" name="form1">
 				<div class="logDiv">
-			<!-- <img class="logBanner" src="html/img/30.jpg" /> -->
-					<div class="logGet">
+		  					<div class="logGet">
 				<!-- 头部提示信息 -->
 						<div class="logD logDtip" style="height:66px; ">
 							<p class="p1">注册</p>
@@ -79,11 +78,11 @@
 					
 					<div class="lgD">
 						<label style="margin-left: -40px;padding-top: 4px"><a style="color: red">*&nbsp;</a>用户名:</label>
-						<input type="text" name="userName" style="margin-left: -20px;width:85%">
+						<input type="text" name="userName" style="margin-left: -20px;width:85%;background-color: #faffbd">
 					</div>
 					<div class="lgD">
 						<label style="margin-left: -40px;padding-top: 4px"><a style="color: red">*&nbsp;</a>密码:</label>
-						 <input type="password" name="password" style="margin-left: -20px;width:85%">
+						 <input type="password" name="password" style="margin-left: -20px;width:85%;background-color: #faffbd">
 					</div>
 					<div class="lgD">
 						<label style="margin-left: -40px;padding-top: 4px"><a style="color: red">*&nbsp;</a>姓名:</label>
@@ -135,12 +134,12 @@
 						<br>
 					</div>
 					<div class="lgD">
-						<img class="img1" src="img/logName.png"> <input type="text"
-							name="userName">
+						<img class="img1" src="resource/img/logName.png"> <input  type="text"
+							style="background-color: #faffbd" name="userName">
 					</div>
 					<div class="lgD">
-						<img class="img1" src="img/logPwd.png"> <input
-							type="password" name="password">
+						<img class="img1" src="resource/img/logPwd.png"> <input
+							style="background-color: #faffbd" type="password" name="password">
 					</div>
 					<div class="logC">
 						<button class="btn btn-lg btn-primary btn-block">登录</button>${loginMsg }
@@ -154,10 +153,5 @@
 			</div>
 		</div>
 			
-			
-			
-	
-
-
 </body>
 </html>

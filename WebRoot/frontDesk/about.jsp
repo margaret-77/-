@@ -110,16 +110,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p>关于我们</p>
 				</div>
 				<ul>
-					<li><a href="about.html">公司介绍</a></li>
-					<li><a href="honor.html">公司荣誉</a></li>
+					<li><a href="about.jsp">系统简介</a></li>
 				</ul>
-				<div class="tit-ol">
-					<p>在线购票</p>
-				</div>
-				<ul>
-					<li><a href="online.jsp">立即购票</a></li>
-					<li><a href="problem.html">常见问题</a></li>
-				</ul>
+				
 				<div class="tit-co">
 					<p>联系我们</p>
 				</div>
@@ -148,11 +141,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<footer>
 			<div class="container">
 				<ul class="foot-nav clearfix">
-					<li><a href="index.html">网站首页</a></li>
-					<li><a href="about.html">关于我们</a></li>
+					<li><a href="index.jsp">网站首页</a></li>
+					<li><a href="about.jsp">关于我们</a></li>
 					<li><a href="online.jsp">在线购票</a></li>
 					<li><a href="personalCenter.jsp">个人中心</a></li>
-					<li><a href="news.html">新闻资讯</a></li>
+					<li><a href="news.jsp">新闻资讯</a></li>
 					<li><a href="contact.jsp">联系我们</a></li>
 				</ul>
 			</div>
@@ -160,7 +153,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="fl">
 			<ul>
 				<li><a href="tel:15995656015">电话咨询</a></li>
-				<li><a href="index.html">网站首页</a></li>
+				<li><a href="index.jsp">网站首页</a></li>
 				<li><a href="">在线留言</a></li>
 			</ul>
 		</div>

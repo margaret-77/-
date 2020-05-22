@@ -24,4 +24,9 @@
     <select id="getorderByUid" parameterType="int"  resultType="orderinfo" > 
    	 select * from orderinfo where uid=#{uid}
    </select>
+   
+   
+   <select id="queryOrder" parameterType="int" resultType="AllOrderInfo">
+   		select * from (select s.start_sid,s.end_sid,s.pice,s.start_time,c.ctype,r.tname,o.oid,u.uid,o.status,o.date,o.passenger_name,o.location,c.cid from orderinfo o,user u,carriage c,stop s,railway r where o.uid = u.uid and c.cid = o.cid and s.sid = o.sid and r.tid = o.tid) as oder where oder.uid = #{uid}
+   </select>
 </mapper>

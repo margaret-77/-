@@ -115,15 +115,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p>联系我们</p>
 				</div>
 				<ul>
-					<li><a href="contact.jsp">联系我们</a></li>
-					<li><a href="contact.jsp#message">在线留言</a></li>
+					<li><a href="frontDesk/contact.jsp">联系我们</a></li>
+					<li><a href="frontDesk/contact.jsp">在线留言</a></li>
 				</ul>
 				<div class="tit-ol">
 					<p>在线购票</p>
 				</div>
 				<ul>
-					<li><a href="online.jsp">立即购票</a></li>
-					<li><a href="problem.html">常见问题</a></li>
+					<li><a href="frontDesk/online.jsp">立即购票</a></li>
+					<li><a href="frontDesk/problem.jsp">常见问题</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-9 introduce">
@@ -139,7 +139,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<p>联系邮箱：margaret_77@163.com</p>
 					</div>
 					<%-- <div class="map">
-						<iframe src="<%=path %>/frontDesk/static/map/map.html"></iframe>
+						<iframe src="<%=path %>/frontDesk/static/map/map.jsp"></iframe>
 						<span>地图加载中...</span>
 					</div> --%>
 					<div id="message" class="row">
@@ -157,14 +157,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="col-xs-12">
 							<p>发送的消息：</p>
 							<textarea placeholder="添加留言"  name="m_message" value="${msg.m_message}"></textarea><br>
-							<div>
 							<br>
 							<input type="submit" value="立即发送" style="width: 100px; "/> <p>${msg1}</p>
 							</div>
-							</div>
-							
-							
-							
 							
 						</form>
 					</div>
@@ -175,12 +170,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<footer>
 			<div class="container">
 				<ul class="foot-nav clearfix">
-					<li><a href="index.jsp">网站首页</a></li>
-					<li><a href="about.jsp">关于我们</a></li>
-					<li><a href="online.jsp">在线购票</a></li>
-					<li><a href="personalCenter.jsp">个人中心</a></li>
-					<li><a href="news.jsp">新闻资讯</a></li>
-					<li><a href="contact.jsp">联系我们</a></li>
+					<li><a href="frontDesk/index.jsp">网站首页</a></li>
+					<li><a href="frontDesk/about.jsp">关于我们</a></li>
+					<li><a href="frontDesk/online.jsp">在线购票</a></li>
+					<li><a href="frontDesk/personalCenter.jsp">个人中心</a></li>
+					<li><a href="frontDesk/news.jsp">新闻资讯</a></li>
+					<li><a href="frontDesk/contact.jsp">联系我们</a></li>
 					
 					</ul>
 				</ul>

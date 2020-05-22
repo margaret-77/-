@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	<link rel="stylesheet" type="text/css" href="<%=path %>/backgroundDesk/css/css.css" />
     <script type="text/javascript" src="<%=path %>/backgroundDesk/js/jquery.min.js"></script>
     <script type="text/javascript" src="<%=path %>/backgroundDesk/js/page.js"></script>
      <script type="text/javascript" src="<%=path %>/backgroundDesk/js/jquery-1.8.0.js"></script>
@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td>${stop.sticket}</td>
 							<td><a href="station/del_ht_station?sid=${stop.sid}"
 								onclick="return confirm('确定删除吗？')"><img class="operation"
-								src="img/delete.png"></a><td>
+								src="<%=path %>/backgroundDesk/img/delete.png"></a><td>
 
 						</tr>
 					</c:forEach>
@@ -127,17 +127,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   	 <button  style="height: 20px; width:60px; font-size: 14px"
 									class="button" onclick="subForm()">转到</button>
 			 <input type="text" name="pageIndex" id="pageIndex"  value="${page.pageIndex }"/> 页
-			 
-		<%-- 	 <select id="sel" onchange="subForm()" name="pageIndex">
-		<c:forEach var="i" begin="1" end="${page.pageCount }">
-			<option value="${i }"
-				<c:if test="${i == page.pageIndex }"> selected="selected" </c:if>>
-
-				第${i }页</option>
-		</c:forEach>
-	</select> --%>
-			 
-    	</div>
+		  	</div>
     </form>	
 </body>
 </html>

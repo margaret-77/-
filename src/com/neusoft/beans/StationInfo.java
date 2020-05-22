@@ -5,23 +5,15 @@ import java.sql.Time;
 import java.util.Date;
   //添加站点信息https://www.cnblogs.com/tanzq/p/8451226.html
 public class StationInfo implements Serializable{
-	   private int tid;
+   	   private int tid;
 	   private String  tname;
        private int sid;
 	   private String start_sid;
 	   private String end_sid;
-	/*   @DateTimeFormat(pattern = "yyyy-MM-dd") */ 
-	 
 	   private Date start_day;
-	/*   @DateTimeFormat(pattern="hh:mm:ss")  
-		 */
 	   private Time  arrive_time;
-	   
-	 /*  @DateTimeFormat(pattern="hh:mm:ss")  */
-	   private Time  start_time;
-	   
-	  
-	   private Date arrive_day;
+       private Time  start_time;
+       private Date arrive_day;
 	   private String stop_time;
 	   private String sticket;
 	   private double pice;

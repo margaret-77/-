@@ -146,4 +146,16 @@
    <select id="getuser_login" parameterType="map" resultType="userinfo">
    	  select * from userinfo where （accountUser=#{userName} or tel =#{userName} or email =#{userName}）and password=#{password}
    </select>
+   
+   
+   <select id="queryLinkByUser" parameterType="java.lang.String" resultType="com.neusoft.beans.LinkmanInfo">
+   		select * from linkmaninfo where note = #{note}
+   </select>
+   <select id="queryCount" parameterType="java.lang.String" >
+   		select count(*) from linkmaninfo where note=#{note}
+   </select>
+   <update id="updateLink" parameterType="java.util.HashMap">
+   		update linkmaninfo set uname=#{uname} , idcard=#{idcard} , tel=#{phone} , type=#{type} where linkmanId=#{id}
+   </update>
+   
 </mapper>

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.neusoft.beans.StationInfo;
 import com.neusoft.beans.StationInfoList;
 import com.neusoft.mapper.StationInfoMapper;
@@ -28,7 +27,6 @@ import com.neusoft.service.StationServicelmp;
 import com.neusoft.utils.PageInfo;
 import com.neusoft.utils.PageUtil;
 import com.neusoft.utils.StrUtil;
-
 @Controller
 @RequestMapping("/station")
 public class StationController {
@@ -85,11 +83,8 @@ public class StationController {
     //根据车次名称查询中转站信息
 	@RequestMapping("/get_transfer_Station")
 	public String get_transfer_Station(Model m, String tname) {
-
 		List<StationInfo> stationlist = stationService.get_station_byname(tname);
-
 		m.addAttribute("stationlist", stationlist);
-
 		return "station/transfer_list";
 	}
 
@@ -173,7 +168,7 @@ public class StationController {
 				@ModelAttribute("start_sid") String start_sid,
 				@ModelAttribute("end_sid") String end_sid, Model m) {
 
-			int pageSize = 12;
+			int pageSize = 6;
 			Map<Object, Object> map1 = new HashMap<Object, Object>();
 			map1.put("start_sid", start_sid);
 			map1.put("end_sid", end_sid);
@@ -197,7 +192,6 @@ public class StationController {
 		@RequestMapping(value = "/order_station")
 		public String look_station(@ModelAttribute("station1") StationInfo station1,
 				Model m) {
-			
 			return "station/station_order";
 
 		}

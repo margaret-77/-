@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isELIgnored="false"%>
+
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -15,9 +17,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	function test(){
 		document.form2.submit();
 	}
+	function comper(){
+		
+		if(document.form1.tid.value=='${railway1.tid}'){
+			alert("主键冲突重新添加");
+			document.form1.tid.focus();
+			return false;
+		}
+		document.form1.submit();
+	}
+	
 </script>
 </head>
 <body>
+
+    
   <form action="../../add_railway" name="form2" method="post"> 
 	<div id="pageAll">
 		<div class="pageTop">
@@ -37,7 +51,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						&nbsp;&nbsp;车&nbsp;&nbsp;&nbsp;次&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;称：<input type="text" name="tname" value="${railway.tname}" class="input3" />
 					</div>
 					<div class="bbD">
-					&nbsp;&nbsp;类&nbsp;&nbsp;型&nbsp;&nbsp;编&nbsp;&nbsp;号：<input type="text" name="rid" class="input3"  value="${railway.rid}">
+					&nbsp;&nbsp;类&nbsp;&nbsp;型&nbsp;&nbsp;编&nbsp;&nbsp;号：
+				   <input type="text" name="rid" class="input3"  value="${railway.rid}">编号1位高铁，2为动车
+					
 					</div>
 				
 					<div class="bbD">
@@ -46,14 +62,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							<input type="submit" class="btn_ok btn_yes" onclick="test()" value="提交" /> 
 							<input type="button" class="btn_ok btn_yes"  value="取消" /> 
-							
-								${msg }
+							 ${msg }
 						</p>
+						
+						<c:forEach var="railway1" items="${railwayList}">
+			
+					
+					<td>${railway1.tid}</td>
+				
+
+			</c:forEach>
 						
 					</div>
 				</div>
 			</div>
 		</div>
+		
+	    
 </form>
 </body>
 </html>

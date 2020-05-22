@@ -16,19 +16,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 	
 	<mvc:resources location="/resource/" mapping="resource/**"/>
-	<mvc:resources location="/html/" mapping="html/**"/>
-	<mvc:resources location="/images/" mapping="images/**"/>
-	<mvc:resources location="/css/" mapping="css/**"/>
-	<mvc:resources location="/img/" mapping="img/**"/>
-	<mvc:resources location="/js1/" mapping="js1/**"/>
 	<mvc:resources location="/frontDesk/" mapping="frontDesk/**"/>
-	
-	
-	<mvc:resources location="/verification _code/" mapping="verification _code/**"/>
-	<!--后台  -->
-	<mvc:resources location="/backgroundDesk/img" mapping="backgroundDesk/**"/>
 	<mvc:resources location="/backgroundDesk/" mapping="backgroundDesk/**"/>
-	<mvc:resources location="/backgroundDesk/css" mapping="backgroundDesk/**"/>
-	<mvc:resources location="/backgroundDesk/js" mapping="backgroundDesk/**"/>
+	
 	
 </beans>

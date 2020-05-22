@@ -51,15 +51,22 @@ public class RaiwayController {
    @RequestMapping("/add_railway")
 	public String add_railway(@ModelAttribute("railway") RailwayInfo railway, Model m) {
 		int result = mapper.addRailway(railway);
+		Map<Object,Object> map = new HashMap<Object,Object>();
+		List<RailwayInfo> railwayList = mapper.get_select_allRailway(map);
+		m.addAttribute("railwayList",railwayList);
+		
 		System.out.println(result);
 		if (result == 1) {
 			m.addAttribute("msg", "添加成功");
+			
 
 		} else {
 			m.addAttribute("msg", "添加失败");
 		}
 
+		
 		return "backgroundDesk/railway/railway_add";
+
 
 	}
 }

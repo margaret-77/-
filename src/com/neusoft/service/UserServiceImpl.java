@@ -6,17 +6,22 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.neusoft.beans.User;
 import com.neusoft.beans.UserInfo;
 import com.neusoft.mapper.UserInfoMapper;
+import com.neusoft.mapper.UserMapper;
 
+@Transactional
 @Service
-
 public class UserServiceImpl implements IUserService{
 	
 	@Resource
 	UserInfoMapper mapper ;
 
+	@Resource
+	UserMapper userMapper ;
 	//查询所有用户
 	@Override
 	public List<UserInfo> getAllUser(Map<Object,Object> map) {
@@ -29,7 +34,8 @@ public class UserServiceImpl implements IUserService{
 	public int getCount(String userName) {
 		UserInfo user = new UserInfo();
 		user.setUserName(userName);
-	return mapper.get_count(user);
+		System.out.println(user);
+		return mapper.get_count(user);
 	}
 	
 	//根据id查询单个用户
@@ -41,5 +47,49 @@ public class UserServiceImpl implements IUserService{
 	public int updateUserRole(UserInfo user){
 		return mapper.updateUserRole(user);
 	}
+
+	@Override
+	public int updateUser(Map<Object,Object> map) {
+		return userMapper.updateUser(map);
+	}
+	@Override
+	public int updateInfoUser(Map<Object,Object> map){
+		return mapper.updateInfoUser(map);
+	}
+	@Override
+	public User queryMoney(Map<Object,Object> map) {
+		// TODO Auto-generated method stub
+		return userMapper.queryMoney(map);
+	}
+
+	@Override
+	public int addMoney(Map<Object,Object> map) {
+		// TODO Auto-generated method stub
+		return userMapper.addMoney(map);
+	}
+
+	@Override
+	public int register(User user, UserInfo userinfo) {
+		// TODO Auto-generated method stub
+		int insertUser = userMapper.insertUser(user);
+		int insertUserInfo = mapper.insertUserInfo(userinfo);
+		if(insertUser == 0 || insertUserInfo == 0){
+			return 0;
+		}
+		return insertUser+insertUserInfo;
+	}
+
+	@Override
+	public List<User> queryUser(User user) {
+		// TODO Auto-generated method stub
+		return userMapper.queryUser(user);
+	}
+
+	@Override
+	public User queryUserByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return userMapper.queryUserByUserName(userName);
+	}
+	
 
 }

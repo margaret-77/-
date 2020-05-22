@@ -11,18 +11,24 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>My JSP 'stop_list1.jsp' starting page</title>
+<title>My JSP 'user_list1.jsp' starting page</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link rel="stylesheet" type="text/css" href="css/css.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=path%>/backgroundDesk/css/css.css" />
+<link rel="stylesheet" type="text/css" href="resource/css/css.css" />
 <link rel="stylesheet" type="text/css"
 	href="frontDesk/static/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="../css/main.css" />
-<script type="text/javascript" src="frontDesk/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="js1/page.js"></script>
+<link rel="stylesheet" type="text/css" href="resource/css/main.css" />
+
+<script type="text/javascript"
+	src="resource/js/jquery.min.js"></script>
+<script type="text/javascript" src="resource/js/page.js"></script>
+<script type="text/javascript"
+	src="resource/js/jquery-1.8.0.js"></script>
 <script type="text/javascript" src="resource/js/jquery-1.8.0.js"></script>
 <script type="text/javascript">
 	function subForm(pageIndex) {
@@ -60,7 +66,7 @@
 				<li><a href="frontDesk/index.jsp">网站首页</a></li>
 				<li><a href="frontDesk/about.jsp">关于我们</a></li>
 				<li><a href="frontDesk/online.jsp">在线购票</a></li>
-				<li><a href="frontDesk/service.jsp">个人中心</a></li>
+				<li><a href="frontDesk/personalCenter.jsp">个人中心</a></li>
 				<li><a href="frontDesk/news.jsp">新闻资讯</a></li>
 				<li class="active"><a href="frontDesk/contact.jsp">联系我们</a></li>
 				<li><a href="/SSM/login.jsp">登录 </a></li>
@@ -109,7 +115,7 @@
 					<td class="tdColor1"><font color="#FFFFFF">票价</font></td>
 
 					<td class="tdColor1"><font color="#FFFFFF">余票数量</font></td>
-					<td class="tdColor1"><font color="#FFFFFF">发车日期</font></td>
+					<!-- <td class="tdColor1"><font color="#FFFFFF">发车日期</font></td> -->
 					<td class="tdColor1"><font color="#FFFFFF">途径站点</font></td>
 					<td class="tdColor1"><font color="#FFFFFF">备注</font></td>
 					<c:forEach var="stop" items="${stationList}">
@@ -128,14 +134,16 @@
 							<td>${stop.sticket}</td>
 							<%-- <td><fmt:formatDate value='${stop.start_day }' pattern='yyyy-MM-dd hh:mm:ss'/>
                     </td> --%>
-							<td><fmt:formatDate value='${stop.start_day }'
+							<%-- <td><fmt:formatDate value='${stop.start_day }'
 									pattern='yyyy-MM-dd' /></td>
+							--%>
 							<td><a
 								href="station/get_transfer_Station?tname=${stop.tname}">途径站点</a></td>
 							<td>
 								<button type="button"
 									onclick="javascript:window.location.href='/SSM/station/order_station?sid=${stop.sid}';">
-									<img style=" width: 50px;  height: 30px;" src="img/yd.PNG">
+									<img style=" width: 50px;  height: 30px;"
+										src="resource/img/yd.PNG">
 								</button>
 							</td>
 						</tr>
@@ -146,41 +154,39 @@
 					</c:forEach>
 			</table>
 			<div>
-				<div class="cfD">
-					<div align="right">
-						共有 ${page.rowCount } 条记录，当前第 ${page.pageIndex }页，共
-						${page.pageCount } 页
-						<c:choose>
-							<c:when test="${page.hasPre }">
-								<button style="height: 20px; width:60px; font-size: 14px"
-									class="button" onclick="subForm(1)">首页</button>
-								<button style="height: 20px; width:60px; font-size: 14px"
-									class="button" onclick="subForm(${page.pageIndex-1 })">上一页</button>
-							</c:when>
-							<c:otherwise>
+				<div align="right" class="cfD">
+					共有 ${page.rowCount } 条记录，当前第 <label>${page.pageIndex }</label> 页，共
+					${page.pageCount } 页
+
+					<c:choose>
+						<c:when test="${page.hasPre }">
+							<button style="height: 20px; width:60px; font-size: 14px"
+								class="button" onclick="subForm(1)">首页</button>
+							<button style="height: 20px; width:60px; font-size: 14px"
+								class="button" onclick="subForm(${page.pageIndex-1 })">上一页</button>
+						</c:when>
+						<c:otherwise>
 		   	 		首页
 		   	 		上一页
 		   	 	</c:otherwise>
-						</c:choose>
-						<c:choose>
-							<c:when test="${page.hasNext }">
-								<button style="height: 20px; width: 60px; font-size: 14px"
-									class="button" onclick="subForm(${page.pageIndex+1 })">下一页</button>
-								<button style="height: 20px; width: 40px; font-size: 14px"
-									class="button" onclick="subForm(${page.pageCount})">尾页</button>
-							</c:when>
-							<c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${page.hasNext }">
+							<button style="height: 20px; width:60px; font-size: 14px"
+								class="button" onclick="subForm(${page.pageIndex+1 })">下一页</button>
+							<button style="height: 20px; width:60px; font-size: 14px"
+								class="button" onclick="subForm(${page.pageCount})">尾页</button>
+						</c:when>
+						<c:otherwise>
 		   	 		下一页
 		   	 		尾页
 		   	 	</c:otherwise>
-						</c:choose>
+					</c:choose>
 
-						<button class="button" onclick="subForm()"
-							style="height: 20px; width: 40px; font-size: 14px">转到</button>
-						<input type="text" name="pageIndex" id="pageIndex"
-							value="${page.pageIndex }" style="height: 20px; width: 40px;" />
-						页
-					</div>
+					<button style="height: 20px; width:60px; font-size: 14px"
+						class="button" onclick="subForm()">转到</button>
+					<input type="text" name="pageIndex" id="pageIndex"
+						value="${page.pageIndex }" /> 页
 				</div>
 		</form>
 </body>

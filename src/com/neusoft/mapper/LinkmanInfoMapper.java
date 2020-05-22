@@ -29,5 +29,11 @@ public interface LinkmanInfoMapper {
 	public List<LinkmanInfo> get_select_Linkman(Map<Object, Object> map);// 在分页中索引数据
 
 	public List<LinkmanInfo> selectList(Map<Object, Object> map);
+	
+	public List<LinkmanInfo> queryLinkByUser(String note);
+	
+	public int queryCount(String note);
+	
+	public int updateLink(Map<Object, Object> map);
 
 }

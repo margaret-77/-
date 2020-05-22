@@ -4,8 +4,10 @@
 
 <mapper namespace="com.neusoft.mapper.RailwayInfoMapper">
 	<insert id="addRailway" parameterType="RailwayInfo">
-
-		INSERT INTO railway(tid ,tname,rid) values(#{tid},#{tname},#{rid})
+     <selectKey order="AFTER" keyProperty="tid" resultType="int">
+			select last_insert_id()
+		</selectKey>
+		INSERT INTO railway(tname,rid) values(#{tname},#{rid})
 
 	</insert>
 	<delete id="dele_Railway" parameterType="int">
@@ -22,6 +24,9 @@
 	
 		limit #{beginRow},#{pageSize}
 	</select>
-
+	
+    <select id="get_select_allRailway" resultType="RailwayInfo" parameterType="map">
+		select * from Railway
+	</select>
 
 </mapper>

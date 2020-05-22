@@ -101,5 +101,12 @@
    <update id="upd_user" parameterType="userInfo">
    	 update userInfo set userName=#{userName}, password=#{password},note= #{note} where id=#{id}
    </update>
+   <update id="updateInfoUser" parameterType="java.lang.String">
+   		update userInfo set password=#{password} where userName=#{userName}
+   </update>
+   
+   <insert id="insertUserInfo" parameterType="map">
+   		insert into userinfo (userName,password,roleId,u_type,note,user_id) values (#{userinfo.userName},#{userinfo.password},#{userinfo.roleId},#{userinfo.u_type},#{userinfo.note},#{userinfo.user_id})
+   </insert>
    
 </mapper>

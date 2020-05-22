@@ -7,6 +7,8 @@ public class UserInfo {
 	private String note;
 	private int roleId;
 	private int u_type;
+	private String user_id;
+	
 	public int getId() {
 		return id;
 	}
@@ -43,11 +45,17 @@ public class UserInfo {
 	public void setU_type(int u_type) {
 		this.u_type = u_type;
 	}
+	public String getUserId() {
+		return user_id;
+	}
+	public void setUserId(String user_id) {
+		this.user_id = user_id;
+	}
 	@Override
 	public String toString() {
 		return "UserInfo [id=" + id + ", userName=" + userName + ", password="
 				+ password + ", note=" + note + ", roleId=" + roleId
-				+ ", u_type=" + u_type + "]";
+				+ ", u_type=" + u_type + ", user_id=" + user_id + "]";
 	}
 	
 	

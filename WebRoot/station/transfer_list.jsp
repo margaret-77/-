@@ -9,19 +9,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <title>My JSP 'transfer_list.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
+     <title>中转信息展示</title>
+   	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/css.css" />
-   <script type="text/javascript" src="js1/jquery.min.js"></script>
-   <script type="text/javascript" src="js1/page.js" ></script>
-    <link rel="stylesheet" type="text/css" href="/SSM/qt/static/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/SSM/qt/static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="resource/css/css.css" />
+   <script type="text/javascript" src="resource/js/jquery.min.js"></script>
+   <script type="text/javascript" src="resource/js/page.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/SSM/frontDesk/static/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/SSM/frontDesk/static/css/main.css" />
   </head>
   
   <body>
@@ -35,29 +33,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				    </button>
-					<a class="navbar-brand" href="index.html"><img src="qt/static/images/logo.png"></a>
+					<a class="navbar-brand" href="index.jsp"><img src="frontDesk/static/images/logo.png"></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="/SSM/qt/index.html">网站首页</a>
+							<a href="/SSM/frontDesk/index.jsp">网站首页</a>
 						</li>
 						<li>
-							<a href="/SSM/qt/about.html">关于我们</a>
+							<a href="/SSM/frontDesk/about.jsp">关于我们</a>
 						</li>
 						<li  class="active">
-							<a href="/SSM/qt/online.jsp">在线购票</a>
+							<a href="/SSM/frontDesk/online.jsp">在线购票</a>
 						</li>
 						<li>
-							<a href="/SSM/qt/service.html">个人中心</a>
+							<a href="/SSM/frontDesk/service.jsp">个人中心</a>
 						</li>
 						<li>
-							<a href="/SSM/qt/news.html">新闻资讯</a>
+							<a href="/SSM/frontDesk/news.jsp">新闻资讯</a>
 						</li>
 						<li>
-							<a href="/SSM/qt/contact.jsp">联系我们</a>
+							<a href="/SSM/frontDesk/contact.jsp">联系我们</a>
 						</li>
 						<li>
 							<a href="/SSM/login.jsp">登录 </a>

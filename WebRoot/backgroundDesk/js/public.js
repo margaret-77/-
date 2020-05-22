@@ -1,21 +1,6 @@
-// head.html 的弹出框 JS
-// $(".goOut").click(function(){
-//    $(".closeOut").show();
-//  });
-//  $(".p1").click(function(){
-//    $(".closeOut").hide();
-//  });
-//  $(".no").click(function(){
-//    $(".closeOut").hide();
-//  });
- // head.html 的弹出框 JS  end
-
-
-// left.html 的切换节点  JS
+// left.html 
 $(function(){
-	// 点击展开事件，切换图片
 	$(".leftsidebar_box dt").click(function(){
-		// 先处理掉所有存在的节点,再判断是否存在
 		$('.icon1').hide();
 		$('.icon2').show();
 		$(".leftsidebar_box dt").removeClass('menu_chioce1');
@@ -40,7 +25,6 @@ $(function(){
 		
 	});
 	$(".cks").click(function(){
-		// 先处理掉所有存在的节点,再判断是否存在
 		$(".icon5").hide();
 		$('.coin11').hide();
 		$('.coin22').show();
@@ -58,4 +42,4 @@ $(function(){
 		
 	});
 })
-// left.html 的切换节点  JS end
+// left.html

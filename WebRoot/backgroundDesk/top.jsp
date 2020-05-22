@@ -20,9 +20,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
- <link rel="stylesheet" type="text/css" href="css/public.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+ <link rel="stylesheet" type="text/css" href="<%=path %>/backgroundDesk/css/public.css" />
+<script type="text/javascript" src="<%=path %>/backgroundDesk/js/jquery.min.js"></script>
+<script type="text/javascript" src="<%=path %>/backgroundDesk/js/public.js"></script>
 
 <script type="text/javascript">
 	function tuichu(){
@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 头部 -->
 	<div class="head" style="height: 100px; ">
 		<div class="headL">
-			<span style=" font-size: 25px;color: white;">欢迎进入高铁订票系统后台</span>
+			<span style="font-size: 25px;color: white;">欢迎进入高铁订票系统后台</span>
 		</div>
 		<div class="headR">
 			<p class="p1">欢迎，管理员</p>

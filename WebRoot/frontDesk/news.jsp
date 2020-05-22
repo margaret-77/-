@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				    </button>
-					<a class="navbar-brand" href="index.html"><img src="static/images/logo.png"></a>
+					<a class="navbar-brand" href="index.jsp"><img src="static/images/logo.png"></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -108,14 +108,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p>新闻资讯</p>
 				</div>
 				<ul>
-					<li><a href="news.html">新闻中心</a></li>
+					<li><a href="news.jsp">新闻中心</a></li>
 				</ul>
 				<div class="tit-ol">
 					<p>在线购票</p>
 				</div>
 				<ul>
 					<li><a href="online.jsp">立即购票</a></li>
-					<li><a href="problem.html">常见问题</a></li>
+					<li><a href="problem.jsp">常见问题</a></li>
 				</ul>
 				<div class="tit-co">
 					<p>联系我们</p>
@@ -134,7 +134,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="news-con con-pad">
 					<ul>
 						<li>
-							<a href="news-detail1.html">
+							<a href="news-detail1.jsp">
 								<h2>铁路暑运7月1日零时启动 共开行列车369对</h2>
 								<span>2019-6-28</span>
 								<p>
@@ -143,7 +143,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						</li>
 						<li>
-							<a href="news-detail2.html">
+							<a href="news-detail2.jsp">
 								<h2>购买暑假学生火车票的学生们注意啦！</h2>
 								<span>2019-6-28</span>
 								<p>
@@ -152,7 +152,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						</li>
 						<li>
-							<a href="news-detail3.html">
+							<a href="news-detail3.jsp">
 								<h2>“高铁极速达”，货物“闪现”到家</h2>
 								<span>2019-6-14</span>
 								<p>
@@ -161,7 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						</li>
 						<li>
-							<a href="news-detail4.html">
+							<a href="news-detail4.jsp">
 								<h2>6月起起铁路降低这些费用 让利9.4亿元，</h2>
 								<span>2019-6-14</span>
 								<p>
@@ -177,11 +177,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<footer>
 			<div class="container">
 				<ul class="foot-nav clearfix">
-					<li><a href="index.html">网站首页</a></li>
-					<li><a href="about.html">关于我们</a></li>
+					<li><a href="index.jsp">网站首页</a></li>
+					<li><a href="about.jsp">关于我们</a></li>
 					<li><a href="online.jsp">在线购票</a></li>
-					<li><a href="service.html">个人中心</a></li>
-					<li><a href="news.html">新闻资讯</a></li>
+					<li><a href="service.jsp">个人中心</a></li>
+					<li><a href="news.jsp">新闻资讯</a></li>
 					<li><a href="contact.jsp">联系我们</a></li>
 				</ul>
 			</div>
@@ -189,7 +189,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="fl">
 			<ul>
 				<li><a href="tel:15995656015">电话咨询</a></li>
-				<li><a href="index.html">网站首页</a></li>
+				<li><a href="index.jsp">网站首页</a></li>
 				<li><a href="">在线留言</a></li>
 			</ul>
 		</div>

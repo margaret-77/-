@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	<link rel="stylesheet" type="text/css" href="<%=path %>/backgroundDesk/css/css.css" />
     <script type="text/javascript" src="<%=path %>/backgroundDesk/js/jquery.min.js"></script>
     <script type="text/javascript" src="<%=path %>/backgroundDesk/js/page.js"></script>
      <script type="text/javascript" src="<%=path %>/backgroundDesk/js/jquery-1.8.0.js"></script>
@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="img/coin02.png" /><span><a href="#">留言</a>&nbsp;-&nbsp;<a
+				<img src="<%=path %>/backgroundDesk/img/coin02.png" /><span><a href="#">留言</a>&nbsp;-&nbsp;<a
 					href="#">留言信息统计</a>&nbsp;</span>
 			</div>
 		</div>
@@ -62,11 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<td>${messages.m_time}</td>
 					<td><a href="messages/del_ht_Messages?m_no=${messages.m_no}"
 								onclick="return confirm('确定删除吗？')"><img class="operation"
-								src="img/delete.png"></a><td>
-								
-              <br>
-              
-			                  </td>
+								src="<%=path %>/backgroundDesk/img/delete.png"></a><td>
 				</tr>
 			</c:forEach>
 		</table>

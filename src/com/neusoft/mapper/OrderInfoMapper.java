@@ -2,7 +2,9 @@ package com.neusoft.mapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import com.neusoft.beans.AllOrderInfo;
 import com.neusoft.beans.OrderInfo;
 
 public interface OrderInfoMapper {
@@ -21,6 +23,9 @@ public interface OrderInfoMapper {
 			
 			//Ëø¶¨¶©µ¥×ùÎ»
 			public HashMap<String,String> lockSeat(String tid, String date, String ctype, String nextTo, int fromIndex, int toIndex);
+			
+			public List<AllOrderInfo> queryOrder(int uid);
+			
 
 
 }

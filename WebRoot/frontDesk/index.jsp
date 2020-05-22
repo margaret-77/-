@@ -139,31 +139,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</a>
 								</li>
 								<li>
-									<a href="service1.html">
+									<a href="service1.jsp">
 										<img src="static/images/serli/3.png" />
 										<span>物流空运</span>
 									</a>
 								</li>
 								<li>
-									<a href="service2.html">
+									<a href="service2.jsp">
 										<img src="static/images/serli/5.png" />
 										<span>限时到达</span>
 									</a>
 								</li>
 								<li>
-									<a href="service3.html">
+									<a href="service3.jsp">
 										<img src="static/images/serli/4.png" />
 										<span>物流普运</span>
 									</a>
 								</li>
 								<li>
-									<a href="service4.html">
+									<a href="service4.jsp">
 										<img src="static/images/serli/3.png" />
 										<span>城际快线</span>
 									</a>
 								</li>
 								<li>
-									<a href="service5.html">
+									<a href="service5.jsp">
 										<img src="static/images/serli/1.png" />
 										<span>合作共赢</span>
 									</a>
@@ -174,7 +174,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-sm-6">
 						<ul class="clearfix quicklink">
 							<li class="link-yf">
-								<a href="problem-detail3.html">
+								<a href="problem-detail3.jsp">
 									<img src="static/images/serli/6.png" />
 									<div>
 										<span>运费咨询</span>
@@ -182,7 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 							</li>
 							<li class="link-wd"> 
-								<a href="problem-detail6.html">
+								<a href="problem-detail6.jsp">
 									<img src="static/images/serli/8.png" />
 									<div>
 										<span>车票查询</span>
@@ -190,7 +190,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 							</li>
 							<li class="link-jj">
-								<a href="problem-detail5.html">
+								<a href="problem-detail5.jsp">
 									<img src="static/images/serli/9.png" />
 									<div>
 										<span>解决方案</span>
@@ -207,25 +207,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							<ul class="news-list">
 								<li>
-									<a href="news-detail1.html">
+									<a href="news-detail1.jsp">
 										<span>2019-6-28</span>
 										<p>铁路暑运7月1日零时启动 共开行列车369对</p>
 									</a>
 								</li>
 								<li>
-									<a href="news-detail2.html">
+									<a href="news-detail2.jsp">
 										<span>2019-6-28</span>
 										<p>购买暑假学生火车票的学生们注意啦！</p>
 									</a>
 								</li>
 								<li>
-									<a href="news-detail3.html">
+									<a href="news-detail3.jsp">
 										<span>2019-6-14</span>
 										<p>“高铁极速达”，货物“闪现”到家</p>
 									</a>
 								</li>
 								<li>
-									<a href="news-detail4.html">
+									<a href="news-detail4.jsp">
 										<span>2019-6-14</span>
 										<p>6月起起铁路降低这些费用 让利9.4亿元，</p>
 									</a>

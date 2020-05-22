@@ -3,6 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,12 +24,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="<%=path %>/frontDesk/static/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<%=path %>/frontDesk/static/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<%=path %>/frontDesk/css/css.css" />
-	<script type="text/javascript" src="../js1/jquery.min.js"></script>
-	<script type="text/javascript" src="../js1/page.js" ></script>
-	<script type="text/javascript" src="../resource/js/jquery-1.8.0.js"></script>
+	<script type="text/javascript" src="resource/js/jquery.min.js"></script>
+	<script type="text/javascript" src="resource/js/page.js" ></script>
+	<script type="text/javascript" src="resource/js/jquery-1.8.0.js"></script>
+	
 	<script src="<%=path %>/frontDesk/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<%=path %>/frontDesk/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<%=path %>/frontDesk/static/js/main.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="<%=path %>/resource/My97DatePicker/WdatePicker.js"></script>
 	<script type="text/javascript">
 	function subForm(pageIndex){
 			if(pageIndex){
@@ -38,11 +42,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				document.form1.submit();
 			}
 		}
-	</script>
-  </head>
+		</script>
+		
+	  </head>
   
   <body>
-   <form action="station/station_page_manager2" method="post" name="form1">
+     <form action="station/station_page_manager2" method="post" name="form1">
    <nav class="navbar navbar-default">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -137,17 +142,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="frontDesk/online.jsp">在线购票</a></li>
 				</ul>
 				<div class="tit-ol">
-					<p>在线购票</p>
+					<p>关于我们</p>
 				</div>
 				<ul>
-					<li><a href="online.jsp">立即购票</a></li>
-					<li><a href="problem.html">常见问题</a></li>
+					<li><a href="frontDesk/about.jsp">系统简介</a></li>
+					<li><a href="frontDesk/problem.jsp">常见问题</a></li>
 				</ul>
 				<div class="tit-co">
 					<p>联系我们</p>
 				</div>
 				<ul>
-					<li><a href="contact.jsp">在线留言</a></li>
+					<li><a href="frontDesk/contact.jsp">在线留言</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-9 introduce">
@@ -158,24 +163,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</h1>
 				</section>
 				<div class="onlinepg con-pad">		
-   <ul class="row">
+      <ul class="row">
 	 <div class="cfD" align="center">
-      &nbsp; &nbsp;&nbsp;出发地：<input type="text" class="timeInput"  name="start_sid"  placeholder="输入站点名" value="${start_sid}"><br><br>
-               车次名称：<input type="text" class="timeInput"  name=""  placeholder="输入站点名" value="${start_sid}"><br><br>
-      &nbsp; &nbsp;&nbsp;到达地：<input type="text"  class="timeInput" name="end_sid" placeholder="输入站点名" value="${end_sid}"><br><br>
-	    出发日期：<input type= "date" class="timeInput" name="end_sid" placeholder="输入站点名" value="${end_sid}"><br><br>
-	    
-	       <!-- onfocus="WdatePicker({maxDate:'%yyyy-%MM-%dd'})"  -->
-	   <button class="button"  type="submit"  id="" name="">查询</button><br><br>    
+               始&nbsp;&nbsp;&nbsp;&nbsp;发&nbsp;&nbsp;&nbsp;&nbsp;站：<input type="text" class="timeInput"  name="start_sid"  placeholder="输入站点名" value="${start_sid}"><br><br>
+               终&nbsp;&nbsp;&nbsp;&nbsp;点&nbsp;&nbsp;&nbsp;&nbsp;站：<input type="text"  class="timeInput" name="end_sid" placeholder="输入站点名" value="${end_sid}"><br><br>
+	    车&nbsp;&nbsp;次&nbsp;&nbsp;名&nbsp;&nbsp;称：<input type="text" class="timeInput"  name=""  placeholder="输入站点名" value="${start_sid}"><br><br>
+               出&nbsp;&nbsp;发&nbsp;&nbsp;日&nbsp;&nbsp;期： <input id="d424" class="Wdate" type="text" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-M-d',minDate:'%y-%M-%d 7:00:00',maxDate:'%y-%M-{%d+28} 11:00:00'})"/>
+	  <br><br>
+	  <div class="cfD" >  <button class="button" type="submit" style="font-size:16px;background-color:#2C7EED;width:280px;"><span style="color:#FFFAF0">查询车票</span></button><br><br> </div>
 		<footer>
 			<divclass="container">
 				<ul class="foot-nav clearfix">
-					<li><a href="index.jsp">网站首页</a></li>
-					<li><a href="about.jsp">关于我们</a></li>
-					<li><a href="online.jsp">在线购票</a></li>
-					<li><a href="personalcenter.jsp">个人中心</a></li>
-					<li><a href="news.jsp">新闻资讯</a></li>
-					<li><a href="contact.jsp">联系我们</a></li>
+					<li><a href="frontDesk/index.jsp">网站首页</a></li>
+					<li><a href="frontDesk/about.jsp">关于我们</a></li>
+					<li><a href="frontDesk/online.jsp">在线购票</a></li>
+					<li><a href="frontDesk/personalCenter.jsp">个人中心</a></li>
+					<li><a href="frontDesk/news.jsp">新闻资讯</a></li>
+					<li><a href="frontDesk/contact.jsp">联系我们</a></li>
 				</ul>
 				
 			</div>
@@ -189,6 +193,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		</form>
 	</body>
-
-
 </html>

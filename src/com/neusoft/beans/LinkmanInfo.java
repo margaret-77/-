@@ -1,12 +1,17 @@
 package com.neusoft.beans;
 
+import java.io.Serializable;
+
 //常用联系人数据表
-public class LinkmanInfo {
+@SuppressWarnings("serial")
+public class LinkmanInfo implements Serializable{
 
 	private int linkmanId;
 
 	private String uname;// 姓名
 
+	private String sex;
+	
 	private String idcard;
 
 	private String tel;
@@ -18,6 +23,24 @@ public class LinkmanInfo {
 	private String note;
 
 	private String idcard_no;
+
+	private String state;
+	
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 
 	public int getLinkmanId() {
 		return linkmanId;
@@ -86,9 +109,13 @@ public class LinkmanInfo {
 	@Override
 	public String toString() {
 		return "LinkmanInfo [linkmanId=" + linkmanId + ", uname=" + uname
-				+ ", idcard=" + idcard + ", tel=" + tel + ", type=" + type
-				+ ", email=" + email + ", note=" + note + ", idcard_no="
-				+ idcard_no + "]";
+				+ ", sex=" + sex + ", idcard=" + idcard + ", tel=" + tel
+				+ ", type=" + type + ", email=" + email + ", note=" + note
+				+ ", idcard_no=" + idcard_no + ", state=" + state + "]";
 	}
+
+	
+
+	
 	
 }

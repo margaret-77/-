@@ -5,13 +5,17 @@ import java.sql.Time;
 public class User {
 	private int uid;
 
+	private String accountUser;
+	
 	private String uname;
 
-	private String password;
+	private String passward;
+	
+	private String sex;
+	
+	private String cardtype;
 
 	private String idcard;
-
-	private String status;
 
 	private String tel;
 
@@ -19,7 +23,18 @@ public class User {
 
 	private String email;
   
-	private Time time;
+	private String userinfo_id;
+	
+	private double money;
+	
+
+	public double getMoney() {
+		return money;
+	}
+
+	public void setMoney(double money) {
+		this.money = money;
+	}
 
 	public int getUid() {
 		return uid;
@@ -38,11 +53,11 @@ public class User {
 	}
 
 	public String getPassword() {
-		return password;
+		return passward;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.passward = password;
 	}
 
 	public String getIdcard() {
@@ -53,13 +68,7 @@ public class User {
 		this.idcard = idcard;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
 
 	public String getTel() {
 		return tel;
@@ -85,22 +94,57 @@ public class User {
 		this.email = email;
 	}
 
-
-	public Time getTime() {
-		return time;
+	public String getAccountUser() {
+		return accountUser;
 	}
 
-	public void setTime(Time time) {
-		this.time = time;
+	public void setAccountUser(String accountUser) {
+		this.accountUser = accountUser;
+	}
+
+	public String getPassward() {
+		return passward;
+	}
+
+	public void setPassward(String passward) {
+		this.passward = passward;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getCardtype() {
+		return cardtype;
+	}
+
+	public void setCardtype(String cardtype) {
+		this.cardtype = cardtype;
+	}
+
+	public String getUserinfo_id() {
+		return userinfo_id;
+	}
+
+	public void setUserinfo_id(String userinfo_id) {
+		this.userinfo_id = userinfo_id;
 	}
 
 	@Override
 	public String toString() {
-		return "User [uid=" + uid + ", uname=" + uname + ", password="
-				+ password + ", idcard=" + idcard + ", status=" + status
-				+ ", tel=" + tel + ", type=" + type + ", email=" + email
-				+ ", time=" + time + "]";
+		return "User [uid=" + uid + ", accountUser=" + accountUser + ", uname="
+				+ uname + ", passward=" + passward + ", sex=" + sex
+				+ ", cardtype=" + cardtype + ", idcard=" + idcard + ", tel="
+				+ tel + ", type=" + type + ", email=" + email
+				+ ", userinfo_id=" + userinfo_id + ", money=" + money + "]";
 	}
+
+	
+
 
 	
 }
